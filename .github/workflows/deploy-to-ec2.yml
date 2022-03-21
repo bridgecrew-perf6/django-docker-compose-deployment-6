@@ -23,9 +23,9 @@ jobs:
 
           working-directory: /home/ec2-user/django-docker-compose-deployment
           command: ls -al > delme1.txt && \
-                  ls > delme2.txt
+                  ls -al > delme2.txt
           comment: Hello world!
 
-      # Catch SSM outputs (v5)
+      # Catch SSM outputs (v6)
       - name: Get the outputs
         run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
