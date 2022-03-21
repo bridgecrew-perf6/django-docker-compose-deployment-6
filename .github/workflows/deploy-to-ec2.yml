@@ -25,6 +25,6 @@ jobs:
           command: ls -al
           comment: Hello world!
 
-      # Catch SSM outputs (v2)
+      # Catch SSM outputs (v3)
       - name: Get the outputs
         run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
