@@ -22,9 +22,9 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
 
           working-directory: /home/ec2-user/django-docker-compose-deployment
-          command: ls -al > delme1.txt && ls > delme2.txt
+          command: git pull origin main && docker-compose -f docker-compose-deploy.yml build app && docker-compose -f docker-compose-deploy.yml up --no-deps -d app
           comment: Hello world!
 
-      # Catch SSM outputs (v8)
+      # Catch SSM outputs (v9)
       - name: Get the outputs
         run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
