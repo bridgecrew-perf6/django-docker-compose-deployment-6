@@ -25,6 +25,6 @@ jobs:
           command: bash .github/workflows/command.sh
           comment: deploy to ec2!
 
-      # Catch SSM outputs (v14)
+      # Catch SSM outputs (v15)
       - name: Get the outputs
         run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
