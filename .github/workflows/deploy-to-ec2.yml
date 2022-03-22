@@ -23,8 +23,8 @@ jobs:
 
           working-directory: /home/ec2-user/django-docker-compose-deployment
           command: git pull origin main && docker-compose -f docker-compose-deploy.yml build app && docker-compose -f docker-compose-deploy.yml up --no-deps -d app
-          comment: Hello world!
+          comment: deploy to ec2!
 
-      # Catch SSM outputs (v9)
+      # Catch SSM outputs (v10)
       - name: Get the outputs
         run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
